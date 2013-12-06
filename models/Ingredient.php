@@ -4,7 +4,7 @@ use Model;
 
 class Ingredient extends Model
 {
-    public $table = 'responsiv_dishsmith_ingredient';
+    public $table = 'responsiv_dishsmith_ingredients';
 
     /*
      * Validation

@@ -4,7 +4,7 @@ use Model;
 
 class Dish extends Model
 {
-    public $table = 'responsiv_dishsmith_dish';
+    public $table = 'responsiv_dishsmith_dishes';
 
     /*
      * Validation
