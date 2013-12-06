@@ -1,7 +1,7 @@
 DishSmith Plugin
 ================
 
-Plugin used by DishSmith theme created at HACT 2013
+Plugin used by DishSmith theme created at [HACT 2013](http://hact.org.au).
 
 See [DishSmith theme](https://github.com/daftspunk/dishsmith) for the details.
 
@@ -13,6 +13,7 @@ An item on a menu, like a meal. Dishes belong to Users.
 
 - name
 - user
+- slug
 
 #### Ingredient
 
@@ -20,6 +21,7 @@ Dishes have many ingredients, unified ingredients make up the shopping list.
 
 - name
 - description
+- slug
 
 #### Dish:Ingredient
 
