@@ -6,6 +6,10 @@ class Dish extends Model
 {
     public $table = 'responsiv_dishsmith_dishes';
 
+    public $implement = [
+        'October.Rain.Database.Behaviors.SortableModel'
+    ];
+
     /*
      * Validation
      */
