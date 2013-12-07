@@ -47,8 +47,8 @@ class Dish extends Model
     public function scopeOfWeek($query, $week)
     {
         $alpha = array_flip(array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z'));
-        $weekNo = isset($alpha[$week-1]) ? $alpha[$week-1] : 1;
-        return $query->skip(($weekNo - 1) * 7)->take(7);
+        $weekNo = isset($alpha[$week]) ? $alpha[$week] : 0;
+        return $query->skip($weekNo * 7)->take(7);
     }
 
     //
@@ -103,6 +103,16 @@ class Dish extends Model
         $weekNo = ceil($count / 7);
         $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
         return $alpha[$weekNo-1];
+    }
+
+    public static function getWeeksForUser($user)
+    {
+        $self = new self();
+        $dishNo = $self->ofUser($user)->count();
+        $dishNo = ceil($dishNo / 7);
+
+        $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+        return array_slice($alpha, 0, $dishNo);
     }
 
 }
