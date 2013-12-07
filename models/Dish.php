@@ -11,7 +11,6 @@ class Dish extends Model
      */
     public $rules = [
         'name' => 'required',
-        'slug' => 'required',
     ];
 
     protected $guarded = [];
@@ -24,7 +23,11 @@ class Dish extends Model
     ];
 
     public $belongsToMany = [
-        'ingredients' => ['Plugins\Responsiv\DishSmith\Models\Ingredient', 'table' => 'responsiv_dishsmith_dishes_ingredients']
+        'ingredients' => [
+            'Plugins\Responsiv\DishSmith\Models\Ingredient',
+            'table' => 'responsiv_dishsmith_dishes_ingredients',
+            'pivotData' => ['amount', 'type']
+        ]
     ];
 
     //
@@ -35,6 +38,23 @@ class Dish extends Model
     {
         if (!$user) return null;
         return $query->where('user_id', $user->id);
+    }
+
+    public function getIngredients()
+    {
+        $relation = $this->ingredients;
+        $ingredients = [];
+
+        foreach ($relation as $ingredient)
+        {
+            $ingredients[] = [
+                'name' => $ingredient->name,
+                'amount' => $ingredient->pivot->amount,
+                'type' => $ingredient->pivot->type,
+            ];
+        }
+
+        return $ingredients;
     }
 
 }

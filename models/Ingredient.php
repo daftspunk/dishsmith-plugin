@@ -11,10 +11,7 @@ class Ingredient extends Model
      */
     public $rules = [
         'name' => 'required',
-        'description' => 'required',
-        'slug' => 'required',
     ];
 
     protected $guarded = [];
-
 }
