@@ -44,6 +44,17 @@ class Dish extends Model
         return $query->where('user_id', $user->id);
     }
 
+    public function scopeOfWeek($query, $week)
+    {
+        $alpha = array_flip(array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z'));
+        $weekNo = isset($alpha[$week-1]) ? $alpha[$week-1] : 1;
+        return $query->skip(($weekNo - 1) * 7)->take(7);
+    }
+
+    //
+    // Helpers
+    //
+
     public function getIngredients()
     {
         $relation = $this->ingredients;
@@ -59,6 +70,39 @@ class Dish extends Model
         }
 
         return $ingredients;
+    }
+
+    public static function mergeIngredients($dishes)
+    {
+        $ingredientMap = [];
+        foreach ($dishes as $dish) {
+            foreach ($dish->ingredients as $ingredient) {
+                if (!isset($ingredientMap[$ingredient->id])) {
+                    $ingredientMap[$ingredient->id] = [
+                        'id' => $ingredient->id,
+                        'amount' => $ingredient->pivot->amount,
+                        'type' => $ingredient->pivot->type,
+                        'name' => $ingredient->name,
+                        'usedIn' => [$dish],
+                        'usedInString' => $dish->name
+                    ];
+                }
+                else {
+                    $ingredientMap[$ingredient->id]['amount'] += $ingredient->pivot->amount;
+                    $ingredientMap[$ingredient->id]['usedIn'][] = $dish;
+                    $ingredientMap[$ingredient->id]['usedInString'] .= ', ' . $dish->name;
+                }
+            }
+        }
+
+        return $ingredientMap;
+    }
+
+    public function getWeek($count)
+    {
+        $weekNo = ceil($count / 7);
+        $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
+        return $alpha[$weekNo-1];
     }
 
 }

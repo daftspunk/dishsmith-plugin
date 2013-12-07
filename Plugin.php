@@ -26,21 +26,21 @@ class Plugin extends PluginBase
     public function registerNavigation()
     {
         return [
-            'user' => [
-                'label' => 'DishSmith',
-                'url' => Backend::url('dishsmith/dishes'),
-                'icon' => 'icon-food',
-                'permissions' => ['dishsmith:*'],
-                'order' => 500,
-                'sideMenu' => [
-                    'users' => [
-                        'label' => 'All Users',
-                        'icon' => 'icon-food',
-                        'url' => Backend::url('responsiv/dishsmith/dishes'),
-                        'permissions' => ['dishsmith:access_dishes'],
-                    ],
-                ]
-            ]
+            // 'dishsmith' => [
+            //     'label' => 'DishSmith',
+            //     'url' => Backend::url('dishsmith/dishes'),
+            //     'icon' => 'icon-food',
+            //     'permissions' => ['dishsmith:*'],
+            //     'order' => 500,
+            //     'sideMenu' => [
+            //         'users' => [
+            //             'label' => 'All Users',
+            //             'icon' => 'icon-food',
+            //             'url' => Backend::url('responsiv/dishsmith/dishes'),
+            //             'permissions' => ['dishsmith:access_dishes'],
+            //         ],
+            //     ]
+            // ]
         ];
     }
 
