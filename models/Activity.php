@@ -18,7 +18,7 @@ class Activity extends Model
      */
     public $belongsTo = [
         'dish' => ['Plugins\Responsiv\DishSmith\Models\Dish', 'foreignKey' => 'dish_id'],
-        'user' => ['Pluguns\October\User\Models\User', 'foreignKey' => 'user_id'],
+        'user' => ['Plugins\October\User\Models\User', 'foreignKey' => 'user_id'],
     ];
 
 }

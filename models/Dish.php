@@ -20,11 +20,21 @@ class Dish extends Model
      * Relations
      */
     public $belongsTo = [
-        'user' => ['Pluguns\October\User\Models\User', 'foreignKey' => 'user_id'],
+        'user' => ['Plugins\October\User\Models\User', 'foreignKey' => 'user_id'],
     ];
 
     public $belongsToMany = [
         'ingredients' => ['Plugins\Responsiv\DishSmith\Models\Ingredient', 'table' => 'responsiv_dishsmith_dishes_ingredients']
     ];
+
+    //
+    // Scopes
+    //
+
+    public function scopeOfUser($query, $user)
+    {
+        if (!$user) return null;
+        return $query->where('user_id', $user->id);
+    }
 
 }
