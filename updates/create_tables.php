@@ -12,6 +12,7 @@ class CreateDishSmithTables extends Migration
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->string('name')->nullable();
             $table->timestamps();
         });
@@ -21,6 +22,7 @@ class CreateDishSmithTables extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name')->nullable();
+            $table->text('description');
             $table->timestamps();
         });
 
@@ -29,14 +31,17 @@ class CreateDishSmithTables extends Migration
             $table->engine = 'InnoDB';
             $table->integer('dish_id')->unsigned();
             $table->integer('ingredient_id')->unsigned();
-            $table->primary(array('dish_id', 'ingredient_id'));
+            $table->integer('amount');
+            $table->string('type');
+            $table->primary(['dish_id', 'ingredient_id'], 'dish_ingredient_primary');
         });
 
         Schema::create('responsiv_dishsmith_activities', function($table)
         {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('name')->nullable();
+            $table->integer('dish_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
         });
     }

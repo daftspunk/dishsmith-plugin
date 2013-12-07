@@ -37,6 +37,7 @@ Pivot table
 Record logging for what dish appears on a timetable. 
 Can tell when a dish was last eaten.
 
+- user (id)
 - dish (id)
 - created_at
 - type (enum: dish, skip)
