@@ -34,6 +34,10 @@ class Dish extends Model
         ]
     ];
 
+    public $morphOne = [
+        'photo' => ['Modules\System\Models\File', 'name' => 'attachment']
+    ];
+
     //
     // Scopes
     //
@@ -113,6 +117,12 @@ class Dish extends Model
 
         $alpha = array('A','B','C','D','E','F','G','H','I','J','K', 'L','M','N','O','P','Q','R','S','T','U','V','W','X ','Y','Z');
         return array_slice($alpha, 0, $dishNo);
+    }
+
+    public function getPic()
+    {
+        $pic = $this->photo;
+        return ($pic) ? $pic->getThumb(350, 350, ['mode'=>'crop']) : 'http://placehold.it/350x350';
     }
 
 }
