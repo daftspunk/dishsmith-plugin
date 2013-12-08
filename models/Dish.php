@@ -41,7 +41,7 @@ class Dish extends Model
     public function scopeOfUser($query, $user)
     {
         if (!$user) return null;
-        return $query->where('user_id', $user->id);
+        return $query->where('user_id', $user->id)->orderBy('sort_order');
     }
 
     public function scopeOfWeek($query, $week)
