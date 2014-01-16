@@ -1,7 +1,7 @@
-<?php namespace Plugins\Responsiv\DishSmith;
+<?php namespace Responsiv\DishSmith;
 
 use Backend;
-use Modules\System\Classes\PluginBase;
+use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
 {
@@ -19,7 +19,7 @@ class Plugin extends PluginBase
     public function registerComponents()
     {
         return [
-            // 'Plugins\October\User\Components\Register' => 'userRegister',
+            // 'RainLab\User\Components\Register' => 'userRegister',
         ];
     }
 

@@ -1,4 +1,4 @@
-<?php namespace Plugins\Responsiv\DishSmith\Models;
+<?php namespace Responsiv\DishSmith\Models;
 
 use Model;
 

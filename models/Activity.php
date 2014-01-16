@@ -1,4 +1,4 @@
-<?php namespace Plugins\Responsiv\DishSmith\Models;
+<?php namespace Responsiv\DishSmith\Models;
 
 use Model;
 
@@ -17,8 +17,8 @@ class Activity extends Model
      * Relations
      */
     public $belongsTo = [
-        'dish' => ['Plugins\Responsiv\DishSmith\Models\Dish', 'foreignKey' => 'dish_id'],
-        'user' => ['Plugins\October\User\Models\User', 'foreignKey' => 'user_id'],
+        'dish' => ['Responsiv\DishSmith\Models\Dish', 'foreignKey' => 'dish_id'],
+        'user' => ['RainLab\User\Models\User', 'foreignKey' => 'user_id'],
     ];
 
 }

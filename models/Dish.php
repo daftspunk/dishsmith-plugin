@@ -1,4 +1,4 @@
-<?php namespace Plugins\Responsiv\DishSmith\Models;
+<?php namespace Responsiv\DishSmith\Models;
 
 use Model;
 
@@ -23,19 +23,19 @@ class Dish extends Model
      * Relations
      */
     public $belongsTo = [
-        'user' => ['Plugins\October\User\Models\User', 'foreignKey' => 'user_id'],
+        'user' => ['RainLab\User\Models\User', 'foreignKey' => 'user_id'],
     ];
 
     public $belongsToMany = [
         'ingredients' => [
-            'Plugins\Responsiv\DishSmith\Models\Ingredient',
+            'Responsiv\DishSmith\Models\Ingredient',
             'table' => 'responsiv_dishsmith_dishes_ingredients',
             'pivotData' => ['amount', 'type']
         ]
     ];
 
     public $morphOne = [
-        'photo' => ['Modules\System\Models\File', 'name' => 'attachment']
+        'photo' => ['System\Models\File', 'name' => 'attachment']
     ];
 
     //
