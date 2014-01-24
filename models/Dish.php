@@ -34,8 +34,8 @@ class Dish extends Model
         ]
     ];
 
-    public $morphOne = [
-        'photo' => ['System\Models\File', 'name' => 'attachment']
+    public $attachOne = [
+        'photo' => ['System\Models\File']
     ];
 
     //
