@@ -17,8 +17,8 @@ class Activity extends Model
      * Relations
      */
     public $belongsTo = [
-        'dish' => ['Responsiv\DishSmith\Models\Dish', 'foreignKey' => 'dish_id'],
-        'user' => ['RainLab\User\Models\User', 'foreignKey' => 'user_id'],
+        'dish' => ['Responsiv\DishSmith\Models\Dish'],
+        'user' => ['RainLab\User\Models\User'],
     ];
 
 }

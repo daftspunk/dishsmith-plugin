@@ -23,7 +23,7 @@ class Dish extends Model
      * Relations
      */
     public $belongsTo = [
-        'user' => ['RainLab\User\Models\User', 'foreignKey' => 'user_id'],
+        'user' => ['RainLab\User\Models\User'],
     ];
 
     public $belongsToMany = [
