@@ -13,6 +13,7 @@ See [DishSmith theme](https://github.com/daftspunk/dishsmith) for the details.
 3. Extract the archive contents to `/plugins/responsiv/dishsmith` in the OctoberCMS application root directory.
 4. Ensure you have also installed the [DishSmith Theme](https://github.com/daftspunk/dishsmith).
 5. Sign out of the Back-end (if not already) and sign in again to build the database.
+6. Open the front-end homepage and sign in to get started
 
 ## Models
 
