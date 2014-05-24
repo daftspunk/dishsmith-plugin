@@ -5,7 +5,14 @@ Plugin used by DishSmith theme created at [HACT 2013](http://hact.org.au).
 
 See [DishSmith theme](https://github.com/daftspunk/dishsmith) for the details.
 
-Download this [Plugin archive](https://github.com/daftspunk/dishsmith-plugin/archive/master.zip) to get started.
+
+## Installation
+
+1. [Install a copy of October CMS](http://octobercms.com/docs/help/installation).
+2. Download this [Plugin archive](https://github.com/daftspunk/dishsmith-plugin/archive/master.zip) as a ZIP.
+3. Extract the archive contents to `/plugins/responsiv/dishsmith` in the OctoberCMS application root directory.
+4. Ensure you have also installed the [DishSmith Theme](https://github.com/daftspunk/dishsmith).
+5. Sign out of the Back-end (if not already) and sign in again to build the database.
 
 ## Models
 
