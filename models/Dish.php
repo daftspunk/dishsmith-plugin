@@ -30,7 +30,7 @@ class Dish extends Model
         'ingredients' => [
             'Responsiv\DishSmith\Models\Ingredient',
             'table' => 'responsiv_dishsmith_dishes_ingredients',
-            'pivotData' => ['amount', 'type']
+            'pivot' => ['amount', 'type']
         ]
     ];
 
