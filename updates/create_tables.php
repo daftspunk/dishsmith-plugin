@@ -1,4 +1,4 @@
-<?php namespace RainLab\Blog\Updates;
+<?php namespace Responsiv\DishSmith\Updates;
 
 use Schema;
 use October\Rain\Database\Updates\Migration;
@@ -23,7 +23,7 @@ class CreateDishSmithTables extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name')->nullable();
-            $table->text('description');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
 
@@ -32,7 +32,7 @@ class CreateDishSmithTables extends Migration
             $table->engine = 'InnoDB';
             $table->integer('dish_id')->unsigned();
             $table->integer('ingredient_id')->unsigned();
-            $table->integer('amount');
+            $table->integer('amount')->nullable();
             $table->string('type');
             $table->primary(['dish_id', 'ingredient_id'], 'dish_ingredient_primary');
         });
