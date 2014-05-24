@@ -5,6 +5,8 @@ Plugin used by DishSmith theme created at [HACT 2013](http://hact.org.au).
 
 See [DishSmith theme](https://github.com/daftspunk/dishsmith) for the details.
 
+Download this [Plugin archive](https://github.com/daftspunk/dishsmith-plugin/archive/master.zip) to get started.
+
 ## Models
 
 #### Dish
