@@ -4,11 +4,10 @@ use Model;
 
 class Dish extends Model
 {
+    use \October\Rain\Database\Traits\Sortable;
+
     public $table = 'responsiv_dishsmith_dishes';
 
-    public $implement = [
-        'October.Rain.Database.Behaviors.SortableModel'
-    ];
 
     /*
      * Validation
