@@ -5,6 +5,7 @@ use Model;
 class Dish extends Model
 {
     use \October\Rain\Database\Traits\Sortable;
+    use \October\Rain\Database\Traits\Validation;
 
     public $table = 'responsiv_dishsmith_dishes';
 

@@ -4,6 +4,8 @@ use Model;
 
 class Ingredient extends Model
 {
+    use \October\Rain\Database\Traits\Validation;
+
     public $table = 'responsiv_dishsmith_ingredients';
 
     /*
