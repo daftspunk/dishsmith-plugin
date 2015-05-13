@@ -9,11 +9,12 @@ See [DishSmith theme](https://github.com/daftspunk/dishsmith) for the details.
 ## Installation
 
 1. [Install a copy of October CMS](http://octobercms.com/docs/help/installation).
-2. Download this [Plugin archive](https://github.com/daftspunk/dishsmith-plugin/archive/master.zip) as a ZIP.
-3. Extract the archive contents to `/plugins/responsiv/dishsmith` in the OctoberCMS application root directory.
-4. Ensure you have also installed the [DishSmith Theme](https://github.com/daftspunk/dishsmith).
-5. Sign out of the Back-end (if not already) and sign in again to build the database.
-6. Open the front-end homepage and sign in to get started
+1. Install the [RainLab.User plugin](octobercms.com/plugin/rainlab-user).
+1. Download this [Plugin archive](https://github.com/daftspunk/dishsmith-plugin/archive/master.zip) as a ZIP.
+1. Extract the archive contents to `/plugins/responsiv/dishsmith` in the OctoberCMS application root directory.
+1. Ensure you have also installed the [DishSmith Theme](https://github.com/daftspunk/dishsmith).
+1. Sign out of the Back-end (if not already) and sign in again to build the database.
+1. Open the front-end homepage and sign in to get started
 
 ## Models
 
